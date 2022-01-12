@@ -7,7 +7,7 @@ import Signup from "./containers/Signup";
 import HomepageLayout from "./containers/Home";
 import ProductList from "./containers/ProductList";
 
-// react routes
+// react routes with types of views
 const BaseRouter = () => (
   <Hoc>
     <Route path="/products" component={ProductList} />

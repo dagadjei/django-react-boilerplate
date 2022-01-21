@@ -10,7 +10,7 @@ import ProductList from "./containers/ProductList";
 // react routes with types of views. 
 const BaseRouter = () => (
   <Hoc>
-    {/* <Route path="/products" component={ProductList} /> */}
+    <Route path="/products" component={ProductList} />
     <Route path="/login" component={Login} />
     <Route path="/signup" component={Signup} />
     <Route exact path="/" component={HomepageLayout} />

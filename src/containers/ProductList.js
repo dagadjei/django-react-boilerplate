@@ -1,6 +1,7 @@
 import React from 'react'
 import Axios from 'axios'
 import { Button, Container, Icon, Image, Item, Label, Segment, Loader, Dimmer, Message } from 'semantic-ui-react'
+import { productListURL } from '../constants'
 
 const paragraph = <Image src='/images/wireframe/short-paragraph.png' />
 
@@ -12,7 +13,7 @@ class ProductList extends React.Component {
     }
     componentDidMount() {
         this.setState({ loading: true })
-        Axios.get('/some-url')
+        Axios.get(productListURL)
             .then(res => {
                 this.setState({ data: res.data, loading: false })
             })
@@ -25,16 +26,13 @@ class ProductList extends React.Component {
         const { data, error, loading } = this.state;
         return (
             <Container>
-                {error && (
+                {/* {error && (
                     <Message
                         error
                         header='There was some errors with your submission'
-                        list={[
-                            'You must include both a upper and lower case letters in your password.',
-                            'You need to select your home country.',
-                        ]}
+                        content={JSON.stringify(error)}
                     />
-                )}
+                )} */}
                 {loading && (
                     <Segment>
                         <Dimmer active inverted>
